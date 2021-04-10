@@ -1,0 +1,350 @@
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("images/bg-pattern.svg") top left / 100% 400px no-repeat;
+    background-color: hsl(230, 100%, 99%);
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+}
+
+/* Main container */
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding-top: .5rem;
+    margin: 0 auto;
+    background-image: url("images/pattern-circles.svg");
+    background-repeat: no-repeat;
+    background-size: 26%;
+    background-position: 50% 10%;
+}
+
+.header,
+.card {
+    margin: 15% auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+}
+
+/* Card */
+.card {
+    width: 95%;
+    border-radius: 10px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 5px 20px 5px rgb(0 0 0 / 10%);
+}
+
+.gray {
+    color: hsl(232deg 16% 65%);
+}
+
+.card section {
+    padding: 1.5rem 3rem 1rem 3rem;
+}
+
+.cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cost>div {
+    display: flex;
+    align-items: center;
+}
+
+.cost>div>h1 {
+    font-size: 3rem;
+}
+
+.range {
+    width: 100%;
+}
+
+.toggle {
+    margin-top: 1.5rem;
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-between;
+    font-size: .8rem;
+    position: relative;
+    left: 10rem;
+}
+
+.slider {
+    -webkit-appearance: none;
+    border-radius: 15px;
+    width: 100%;
+    height: 10px;
+    outline: 0;
+    background: linear-gradient(90deg, hsl(174, 77%, 80%) 50%, hsl(226deg 68% 95%) 50%);
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: hsl(174, 86%, 45%);
+    background-image: url("images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: hsl(174, 77%, 80%) 0px 20px 30px;
+    transition: all .2s ease-in-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: hsl(174, 77%, 40%);
+    background-image: url("images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    outline: 0;
+}
+
+.change {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsl(223, 50%, 87%);
+    cursor: pointer;
+    transition: .4s;
+}
+
+.change:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 2.5px;
+    background: #fff;
+    transition: .4s;
+}
+
+input:checked+.change {
+    background-color: hsl(174, 77%, 80%);
+}
+
+input:checked+.change:before {
+    transform: translateX(20px);
+}
+
+.change.round {
+    border-radius: 30px;
+}
+
+.change.round:before {
+    border-radius: 50%;
+}
+
+.discount {
+    margin-top: .2rem;
+    font-size: .7rem;
+    background: hsl(14, 92%, 95%);
+    color: hsl(15, 100%, 70%);
+    border-radius: .5rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+}
+
+.line {
+    display: block;
+    margin-top: 2rem;
+    width: 100%;
+    height: .07px;
+    background: hsl(223, 50%, 87%);
+}
+
+.trial {
+    margin-top: .8rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+    line-height: 1.9;
+    align-items: center;
+}
+
+.start {
+    background: #ccc;
+    width: 14rem;
+    height: 3rem;
+    font-size: .9rem;
+    border-radius: 2rem;
+    border: none;
+    outline: 0;
+    background: hsl(227, 35%, 25%);
+    color: hsl(220deg 49% 73%);
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.start:hover {
+    color: #fff;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 700px) {
+
+    .card section {
+        padding: .1rem 1rem .5rem 1rem;
+    }
+
+    .cost {
+        flex-direction: column;
+    }
+
+    .cost>p {
+        line-height: 10.5;
+    }
+
+    .range {
+        position: relative;
+        bottom: 7.3rem;
+        height: 0px;
+    }
+
+    .toggle {
+        width: 110%;
+        left: 0rem;
+        justify-content: space-around;
+    }
+
+    .discount {
+        position: relative;
+        right: 3rem;
+        margin-left: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 520px) {
+
+    .header>h1 {
+        font-size: 1.5rem;
+    }
+
+    .header>p {
+        font-size: .8rem;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .container {
+        background-size: 30%;
+        background-position: 50% 5%;
+    }
+
+    .card {
+        padding-bottom: 1rem;
+    }
+
+    .discount {
+        right: 2rem;
+    }
+
+    .trial {
+        flex-direction: column;
+        line-height: 2;
+        margin-top: 1.5rem;
+    }
+
+    .start {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 377px) {
+
+    .header>h1 {
+        font-size: 1.1rem;
+    }
+
+    .header>p {
+        font-size: .7rem;
+        width: 48%;
+        margin: 0 auto;
+    }
+
+    .toggle {
+        width: 108%;
+        left: 0rem;
+        justify-content: space-between;
+    }
+
+    .discount {
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    .header>h1 {
+        font-size: 1.1rem;
+    }
+
+    .header>p {
+        font-size: .7rem;
+        width: 80%;
+    }
+
+    .range {
+        bottom: 6.5rem;
+    }
+
+    .cost>div>h1 {
+        font-size: 2.2rem;
+    }
+
+    .toggle {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .switch {
+        transform: rotateZ(90deg);
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .discount {
+        margin-left: 4rem;
+    }
+
+    .start {
+        width: 10rem;
+        height: 3rem;
+    }
+}

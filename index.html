@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Main ontainer -->
+    <div class="container">
+        <header class="header">
+            <h1>Simple, traffic-based pricing</h1>
+            <p class="gray">Sign-up for our 30 day trial. No credit card required.</p>
+        </header>
+
+        <!-- Card ontainer -->
+        <div class="card">
+
+            <!-- Main price and  pageviews section-->
+            <section class="cost">
+                <p class="gray" id="views">100K PAGEVIEWS</p>
+                <div>
+                    <h1 id="price">$16.00</h1>
+                    <p class="gray">/month</p>
+                </div>
+            </section>
+
+            <!-- Slider section -->
+            <section class="range">
+                <input class="slider" type="range" min="0" max="4" value="2">
+            </section>
+
+            <!-- Toggle and Billing section -->
+            <section class="toggle">
+                <p class="gray">Monthly Billing</p>
+                <label class="switch"><input id="checked" type="checkbox"><span class="change round"></span></label>
+                <p class="gray">Yearly Billing</p>
+                <p class="discount">-25% discount</p>
+            </section>
+
+            <!-- Separator line-->
+            <span class="line"></span>
+
+            <!-- Start trial section -->
+            <section class="trial">
+                <div class="perks">
+                    <p class="gray"><img src="images/icon-check.svg" alt="check-mark"> Unlimited Websites</p>
+                    <p class="gray"><img src="images/icon-check.svg" alt="check-mark"> 100% data ownership</p>
+                    <p class="gray"><img src="images/icon-check.svg" alt="check-mark"> Email reports</p>
+                </div>
+                <button class="start">Start my trial</button>
+            </section>
+        </div>
+    </div>
+    <!-- <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">bunee</a>.
+    </div> -->
+
+    <!-- Script link -->
+    <script src="app.js"></script>
+</body>
+
+</html>
